@@ -3,5 +3,22 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Aloha!! Esto es ASTRO-TechBazar">
-  <h1>Inicio</h1>
+  <section class="grid md:grid-cols-2 gap-8">
+    <div class="rounded-lg p-2 border border-white">
+	<img
+      class="rounded-lg"
+      src="https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg"
+      alt="tecnología"
+    />
+	</div>
+
+    <div>
+      <h1 class="text-3xl font-bold">Sé bienvenid@</h1>
+
+      <p class="text-justify">
+        Dentro de ASTRO-TechBazar", encontrarás todo lo que desees relativo a la
+        tecnología ... ¡¡A tu alcance!!
+      </p>
+    </div>
+  </section>
 </Layout>

@@ -1,23 +1,28 @@
 ---
-interface Props {
-  title: string;
-}
+import Header from "../components/Header.astro";
 
-const { title } = Astro.props;
+// interface Props {
+//   title: string;
+// }
+
+const { title, description } = Astro.props;
+// o dando el valor por defecto desde aquí
+// const { title, description = 'Astro description' } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description || 'Astro description'} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
-    <main>
+    <Header />
+    <main class="text-white max-w-3xl mx-auto py-10">
       <slot />
     </main>
   </body>
