@@ -1,6 +1,6 @@
 ---
 title: 'Un Segundo Artículo'
-description: 'Un resumen del objetivo pretendido por este Blog.'
+description: 'Un resumen de lo que trata este segundo artículo.'
 layout: '../../layouts/BlogLayout.astro'
 ---
 

@@ -1,5 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+
+const articles = Object.values(
+  await import.meta.glob("./*.md", { eager: true })
+);
+
+console.log("articles", articles);
 ---
 
 <Layout title="Blog :: ASTRO-TechBazar">
@@ -7,21 +13,39 @@ import Layout from "../../layouts/Layout.astro";
     <div>
       <h1 class="text-3xl font-bold">Blog</h1>
 
-      <p class="text-justify">
-        Aprendiendo de tecnología...
-      </p>
+      <p class="text-justify">Aprendiendo de tecnología...</p>
 
-      <div class="mt-4">
-        <a href="/blog/first-article" class="px-2 pb-1 border border-white rounded">Un Primer Artículo</a>
+      <!-- <div class="mt-4">
+        <a
+          href="/blog/first-article"
+          class="px-2 pb-1 border border-white rounded">Un Primer Artículo</a
+        >
       </div>
 
       <div class="mt-4">
-        <a href="/blog/second-article" class="px-2 pb-1 border border-white rounded">Un Segundo Artículo</a>
+        <a
+          href="/blog/second-article"
+          class="px-2 pb-1 border border-white rounded">Un Segundo Artículo</a
+        >
       </div>
 
       <div class="mt-4">
-        <a href="/blog/third-article" class="px-2 pb-1 border border-white rounded">Un Tercer Artículo</a>
-      </div>
+        <a
+          href="/blog/third-article"
+          class="px-2 pb-1 border border-white rounded">Un Tercer Artículo</a
+        >
+      </div> -->
+
+      {
+        articles.map((article) => (
+          <div class="mt-4">
+            <a href={article.url} class="px-2 pb-1 border border-white rounded">
+              {article.frontmatter.title}
+            </a>
+            <p>{article.frontmatter.description}</p>
+          </div>
+        ))
+      }
     </div>
   </section>
 </Layout>
