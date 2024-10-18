@@ -1,0 +1,10 @@
+{
+  // a nivel de todos los archivos del proyecto, el formateador será el de ASTRO
+  "editor.defaultFormatter": "astro-build.astro-vscode",
+  // formateo al guardar
+  "editor.formatOnSave": true,
+  // a nivel de todos los archivos de ASTRO del proyecto, el formateador será el de ASTRO
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  }
+}

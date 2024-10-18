@@ -1,0 +1,84 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+// const sellers = await import("../../../data/sellers.json");
+// recogida del objeto contenido en "default" y renombrarlo a "sellers"
+const { default: sellers } = await import("../../../data/sellers.json");
+
+// console.log(sellers);
+---
+
+<Layout title="Vendedores de ASTRO-TechBazar">
+  <h1 class="text-3xl font-bold">Vendedores de ASTRO-TechBazar</h1>
+
+  <p>
+    En esta página, se encontrará la lista de los vendedores de ASTRO-TechBazar.
+  </p>
+
+  <div
+    class="mt-8 w-full max-w-md px-4 py-4 bg-white border border-gray-200 rounded-lg shadow sm:px-8 dark:bg-gray-800 dark:border-gray-700"
+  >
+    <div>
+      <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+        {
+          sellers.map((seller) => (
+            <li class="py-2 sm:py-3">
+              <a
+                href={`/sellers/${seller.id}-${seller.name}-${seller.city}`}
+                class="p-1 flex items-center hover:bg-slate-200 group"
+              >
+                <div class="flex-shrink-0">
+                  <img
+                    class="w-8 h-8 rounded-full"
+                    src={seller.avatar}
+                    alt={seller.name}
+                  />
+                </div>
+                <div class="flex-1 min-w-0 ms-4">
+                  <p class="text-sm font-bold text-gray-600 truncate dark:text-white">
+                    {seller.name}
+                  </p>
+                  <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                    {seller.email}
+                  </p>
+                </div>
+                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                  <svg
+                    class="w-8 h-8 fill-cyan-800 group-hover:fill-cyan-500 transition-colors duration-150"
+                    version="1.1"
+                    id="_x32_"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 512 512"
+                    xml:space="preserve"
+                    fill="none"
+                    transform="rotate(90)"
+                  >
+                    <>
+                      <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <g id="SVGRepo_iconCarrier">
+                        {" "}
+                        <g>
+                          {" "}
+                          <path
+                            class="st0"
+                            d="M472.732,243.625l-0.869-1.337l-0.929-1.296L320.925,33.194C305.854,12.379,281.598,0,255.996,0 c-25.594,0-49.85,12.379-64.87,33.125L41.066,240.992l-0.929,1.296l-0.869,1.337c-8.17,12.669-12.49,27.323-12.49,42.395 c0,16.196,4.924,31.753,14.254,44.993c18.105,25.755,49.441,38.015,80.18,31.463v63.755c0,47.294,38.476,85.769,85.769,85.769 h98.039c47.285,0,85.76-38.475,85.76-85.769v-63.755c30.689,6.586,62.059-5.666,80.215-31.497 c9.295-13.206,14.228-28.772,14.228-44.959C485.222,270.948,480.902,256.294,472.732,243.625z M421.034,295.86 c-4.013,5.708-11.084,8.401-17.866,6.808l-73.459-17.159v140.722c0,13.64-11.05,24.698-24.69,24.698H206.98 c-13.64,0-24.698-11.059-24.698-24.698V285.509l-73.442,17.159c-6.799,1.584-13.861-1.099-17.874-6.808 c-2.079-2.948-3.118-6.39-3.118-9.84c0-3.221,0.912-6.45,2.735-9.278L240.592,68.942c3.578-4.942,9.304-7.872,15.404-7.872 s11.834,2.93,15.412,7.872l150.009,207.799c1.823,2.828,2.734,6.057,2.734,9.278C424.152,289.47,423.104,292.912,421.034,295.86z"
+                          />{" "}
+                        </g>{" "}
+                      </g>
+                    </>
+                  </svg>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</Layout>

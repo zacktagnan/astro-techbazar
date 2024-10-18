@@ -1,0 +1,50 @@
+[
+    {
+        "id": "techworld",
+        "name": "Tech-World",
+        "city": "Donostia",
+        "email": "info@techworld.com",
+        "bio": "Especialistas en dispositivos tecnológicos de última generación.",
+        "products": [
+            "Smartphone X Pro",
+            "Laptop Ultrabox Z"
+        ],
+        "avatar": "https://randomuser.me/api/portraits/men/4.jpg"
+    },
+    {
+        "id": "gadgethub",
+        "name": "GadgetHub",
+        "city": "Bilbo",
+        "email": "admin@gadgethub.net",
+        "bio": "Todo en gadgets y accesorios electrónicos para tu día a día.",
+        "products": [
+            "Auriculares Bluetooth Pro",
+            "Smartwatch Xtreme"
+        ],
+        "avatar": "https://randomuser.me/api/portraits/women/7.jpg"
+    },
+    {
+        "id": "techgear",
+        "name": "TechGear",
+        "city": "Gasteiz",
+        "email": "selling@techgear.com",
+        "bio": "Líderes en soluciones tecnológicas y accesorios para profesionales.",
+        "products": [
+            "Teclado Mecánico RGB",
+            "Cámara Web HD Pro"
+        ],
+        "avatar": "https://randomuser.me/api/portraits/men/11.jpg"
+    },
+    {
+        "id": "gadgetgalaxy",
+        "name": "Gadget Galaxy",
+        "city": "Iruña",
+        "email": "store@gadgetgalaxy.net",
+        "bio": "Líderes en la galaxia y en soluciones tecnológicas.",
+        "products": [
+            "Samsung Galaxy",
+            "Webcam 4k"
+        ],
+        "avatar": "https://randomuser.me/api/portraits/women/28.jpg"
+    }
+]
