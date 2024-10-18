@@ -6,6 +6,8 @@ layout: '../../layouts/BlogLayout.astro'
 
 # Un Primer Artículo
 
+(autor: [TechWorld](/sellers/techworld-TechWorld-Donostia))
+
 Esto no es más que para darte la bienvenida al Blog de ASTRO-TechBazar. Aquí, se compartirá todo el conocimiento posible sobre tecnología, desarrollo web y programación, principalmente.
 
 ## Intro
