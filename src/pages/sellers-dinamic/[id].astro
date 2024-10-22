@@ -1,82 +1,20 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 
-export function getStaticPaths() {
-  // Un único parámetro...con el nombre de archivo [id].astro
-  //   return [
-  //     { params: { id: "techworld" } },
-  //     { params: { id: "gadgethub" } },
-  //     { params: { id: "techgear" } },
-  //     { params: { id: "gadgetgalaxy" } },
-  //   ];
-  // -------------------------------------------
-  // Múltiples parámetros...con el nombre de archivo [id]-[name].astro
-  return [
-    {
-      params: {
-        lang: "en",
-        id: "techworld",
-        name: "Tech-World",
-        city: "Donostia",
-      },
-    },
-    {
-      params: {
-        lang: "es",
-        id: "techworld",
-        name: "Tech-World",
-        city: "Donostia",
-      },
-    },
+export const prerender = false;
 
-    {
-      params: { lang: "en", id: "gadgethub", name: "GadgetHub", city: "Bilbo" },
-    },
-    {
-      params: { lang: "es", id: "gadgethub", name: "GadgetHub", city: "Bilbo" },
-    },
-
-    {
-      params: { lang: "en", id: "techgear", name: "TechGear", city: "Gasteiz" },
-    },
-    {
-      params: { lang: "es", id: "techgear", name: "TechGear", city: "Gasteiz" },
-    },
-
-    {
-      params: {
-        lang: "en",
-        id: "gadgetgalaxy",
-        name: "Gadget Galaxy",
-        city: "Iruña",
-      },
-    },
-    {
-      params: {
-        lang: "es",
-        id: "gadgetgalaxy",
-        name: "Gadget Galaxy",
-        city: "Iruña",
-      },
-    },
-  ];
-}
-
-const { lang, id } = Astro.params;
+const { id } = Astro.params;
 ---
 
 <Layout title={`Vendedor - ${id}`}>
   <header class="font-bold">
-    <h1 class="text-3xl">Página detalle del Vendedor</h1>
+    <h1 class="text-3xl">Página detalle del Vendedor - DINAMIC</h1>
 
-    <span class="text-sm">
-      #<span class="text-cyan-500">{lang}</span>
-      #<span class="text-cyan-500">{id}</span></span
-    >
+    <span class="text-sm"> #<span class="text-cyan-500">{id}</span></span>
   </header>
 
   <div class="mt-11">
-    <a href="/sellers" title="Volver al listado de Sellers-STATIC">
+    <a href="/sellers-dinamic" title="Volver al listado de Sellers-DINAMIC">
       <svg
         class="w-8 h-8 transition-colors duration-150 group"
         viewBox="0 0 24 24"

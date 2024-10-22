@@ -1,5 +1,5 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 
 export function getStaticPaths() {
   // Un único parámetro...con el nombre de archivo [id].astro
@@ -12,67 +12,40 @@ export function getStaticPaths() {
   // -------------------------------------------
   // Múltiples parámetros...con el nombre de archivo [id]-[name].astro
   return [
-    {
-      params: {
-        lang: "en",
-        id: "techworld",
-        name: "Tech-World",
-        city: "Donostia",
-      },
-    },
-    {
-      params: {
-        lang: "es",
-        id: "techworld",
-        name: "Tech-World",
-        city: "Donostia",
-      },
-    },
-
-    {
-      params: { lang: "en", id: "gadgethub", name: "GadgetHub", city: "Bilbo" },
-    },
-    {
-      params: { lang: "es", id: "gadgethub", name: "GadgetHub", city: "Bilbo" },
-    },
-
-    {
-      params: { lang: "en", id: "techgear", name: "TechGear", city: "Gasteiz" },
-    },
-    {
-      params: { lang: "es", id: "techgear", name: "TechGear", city: "Gasteiz" },
-    },
-
-    {
-      params: {
-        lang: "en",
-        id: "gadgetgalaxy",
-        name: "Gadget Galaxy",
-        city: "Iruña",
-      },
-    },
-    {
-      params: {
-        lang: "es",
-        id: "gadgetgalaxy",
-        name: "Gadget Galaxy",
-        city: "Iruña",
-      },
-    },
+    { params: { id: "techworld", name: "Tech-World", city: "Donostia" } },
+    { params: { id: "gadgethub", name: "GadgetHub", city: "Bilbo" } },
+    { params: { id: "techgear", name: "TechGear", city: "Gasteiz" } },
+    { params: { id: "gadgetgalaxy", name: "Gadget Galaxy", city: "Iruña" } },
   ];
 }
 
-const { lang, id } = Astro.params;
+const { id, name, city } = Astro.params;
 ---
 
 <Layout title={`Vendedor - ${id}`}>
   <header class="font-bold">
-    <h1 class="text-3xl">Página detalle del Vendedor</h1>
+    <div class="flex justify-between items-center">
+      <h1 class="text-3xl">Página detalle del Vendedor - STATIC</h1>
+      <div class="flex gap-1">
+        <a
+          href={`/sellers/en/${id}`}
+          class="mt-[2px] text-cyan-800 hover:text-cyan-500 bg-white rounded-lg px-1 py-0 transition-colors duration-150"
+          >EN</a
+        >
+        <span>|</span>
+        <a
+          href={`/sellers/es/${id}`}
+          class="mt-[2px] text-cyan-800 hover:text-cyan-500 bg-white rounded-lg px-1 py-0 transition-colors duration-150"
+          >ES</a
+        >
+      </div>
+    </div>
 
     <span class="text-sm">
-      #<span class="text-cyan-500">{lang}</span>
-      #<span class="text-cyan-500">{id}</span></span
-    >
+      #<span class="text-cyan-500">{id}</span>
+      #<span class="text-cyan-500">{name}</span>
+      #<span class="text-cyan-500">{city}</span>
+    </span>
   </header>
 
   <div class="mt-11">

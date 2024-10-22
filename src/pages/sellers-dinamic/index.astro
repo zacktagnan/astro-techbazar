@@ -9,7 +9,7 @@ const { default: sellers } = await import("../../../data/sellers.json");
 ---
 
 <Layout title="Vendedores de ASTRO-TechBazar">
-  <h1 class="text-3xl font-bold">Vendedores de ASTRO-TechBazar - STATIC</h1>
+  <h1 class="text-3xl font-bold">Vendedores de ASTRO-TechBazar - DINAMIC</h1>
 
   <p>
     En esta página, se encontrará la lista de los vendedores de ASTRO-TechBazar.
@@ -24,7 +24,7 @@ const { default: sellers } = await import("../../../data/sellers.json");
           sellers.map((seller) => (
             <li class="py-2 sm:py-3">
               <a
-                href={`/sellers/${seller.id}|${seller.name}|${seller.city}`}
+                href={`/sellers-dinamic/${seller.id}-${seller.name}-${seller.city}`}
                 class="p-1 flex items-center hover:bg-slate-200 group"
               >
                 <div class="flex-shrink-0">
