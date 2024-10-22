@@ -1,6 +1,7 @@
 {
   "extends": "astro/tsconfigs/base",
 
+  // para no compilar/chequear TS del proyecto
   "compilerOptions": {
     "checkJs": false
   }
