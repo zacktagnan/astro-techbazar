@@ -5,6 +5,9 @@
   "editor.formatOnSave": true,
   // a nivel de todos los archivos de ASTRO del proyecto, el formateador será el de ASTRO
   "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode"
+    "editor.defaultFormatter": "astro-build.astro-vscode",
+    // posibles configraciones para evitar la consideración de TypeScript en el proyecto
+    "typescript.validate.enable": false,
+    "javascript.validate.enable": false
   }
 }
